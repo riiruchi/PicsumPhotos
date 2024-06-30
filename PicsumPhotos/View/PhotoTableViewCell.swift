@@ -42,9 +42,7 @@ class PhotoTableViewCell: UITableViewCell {
         return button
     }()
     
-    var isCheckboxChecked: Bool {
-        return checkbox.isSelected
-    }
+    @CheckboxState var isCheckboxChecked: Bool = false
     
     var checkboxAction: ((Bool) -> Void)?
     
@@ -55,7 +53,7 @@ class PhotoTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     private func setupViews() {
@@ -89,14 +87,16 @@ class PhotoTableViewCell: UITableViewCell {
     }
     
     @objc private func toggleCheckbox() {
-        checkbox.isSelected.toggle()
-        checkboxAction?(checkbox.isSelected)
+        isCheckboxChecked.toggle()
+        checkbox.isSelected = isCheckboxChecked
+        checkboxAction?(isCheckboxChecked)
     }
     
-    func configure(with photo: Photo, isSelected: Bool, isFirstCell: Bool = false) {
+    func configure(with photo: Photo, isSelected: Bool) {
         titleLabel.text = photo.author
         descriptionLabel.text = photo.url
-        checkbox.isSelected = isSelected
+        isCheckboxChecked = isSelected
+        checkbox.isSelected = isCheckboxChecked
         // Use SDWebImage to load the image
         photoImageView.sd_setImage(with: URL(string: photo.downloadURL), placeholderImage: nil, options: .highPriority, completed: nil)
     }
