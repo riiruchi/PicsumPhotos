@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Singleton class responsible for network requests.
 class NetworkManager {
     
     static let shared = NetworkManager()
@@ -15,10 +16,17 @@ class NetworkManager {
     
     private init() {}
     
+    /// Fetches photos from the API with pagination.
+    ///
+    /// - Parameters:
+    ///   - page: The page number to fetch.
+    ///   - limit: The number of items per page.
+    ///   - completion: Completion handler with Result containing either an array of `Photo` or an `Error`.
     func fetchPhotos(page: Int, limit: Int, completion: @escaping (Result<[Photo], Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)?page=\(page)&limit=\(limit)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
+            // If an error occurs, call the completion handler with the error.
             if let error = error {
                 completion(.failure(error))
                 return

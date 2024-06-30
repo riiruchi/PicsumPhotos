@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Model representing a photo object from the API.
 struct Photo: Codable {
     let id: String
     let author: String

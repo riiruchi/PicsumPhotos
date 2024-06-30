@@ -8,10 +8,13 @@
 import UIKit
 import SDWebImage
 
+/// Custom UITableViewCell to display a photo with its details and a checkbox.
 class PhotoTableViewCell: UITableViewCell {
     
+    /// Reuse identifier for the cell.
     static let identifier = "PhotoTableViewCell"
     
+    /// ImageView to display the photo.
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +23,7 @@ class PhotoTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    /// Label to display the title (author name).
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +31,7 @@ class PhotoTableViewCell: UITableViewCell {
         return label
     }()
     
+    /// Label to display the description (URL).
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +39,7 @@ class PhotoTableViewCell: UITableViewCell {
         return label
     }()
     
+    /// Button to act as a checkbox.
     private let checkbox: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +48,7 @@ class PhotoTableViewCell: UITableViewCell {
         return button
     }()
     
+    /// Property wrapper to manage the checkbox state.
     @CheckboxState var isCheckboxChecked: Bool = false
     
     var checkboxAction: ((Bool) -> Void)?
@@ -92,6 +99,11 @@ class PhotoTableViewCell: UITableViewCell {
         checkboxAction?(isCheckboxChecked)
     }
     
+    /// Configures the cell with the given photo and checkbox state.
+    ///
+    /// - Parameters:
+    ///   - photo: The photo to display.
+    ///   - isSelected: The initial checkbox state.
     func configure(with photo: Photo, isSelected: Bool) {
         titleLabel.text = photo.author
         descriptionLabel.text = photo.url

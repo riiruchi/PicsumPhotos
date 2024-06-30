@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
         tableView.refreshControl?.addTarget(self, action: #selector(refreshPhotos), for: .valueChanged)
     }
     
+    /// Binds the ViewModel to the view, setting up closures to handle data updates and errors.
     private func bindViewModel() {
         viewModel.photosDidUpdate = { [weak self] in
             DispatchQueue.main.async {
@@ -55,6 +56,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    /// Refreshes the photo list when the refresh control is triggered.
     @objc private func refreshPhotos() {
         viewModel.refreshPhotos()
     }

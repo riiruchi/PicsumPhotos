@@ -9,9 +9,12 @@ import Foundation
 
 class PhotoListViewModel {
     private var photos: [Photo] = []
+    /// Current page for pagination.
     private var currentPage = 1
+    /// Number of items to fetch per page.
     private let limit = 20
     private var isFetching = false
+    /// Dictionary to keep track of checkbox states by photo ID.
     private var checkboxStates: [String: Bool] = [:]
     
     var photosDidUpdate: (() -> Void)?
@@ -21,6 +24,10 @@ class PhotoListViewModel {
         return photos.count
     }
     
+    /// Returns the photo at the specified index.
+    ///
+    /// - Parameter index: The index of the photo.
+    /// - Returns: The photo at the specified index, or nil if the index is out of bounds.
     func photo(at index: Int) -> Photo? {
         guard index >= 0 && index < photos.count else {
             return nil
@@ -28,14 +35,24 @@ class PhotoListViewModel {
         return photos[index]
     }
     
+    /// Checks if the checkbox is selected for a given photo ID.
+    ///
+    /// - Parameter photoId: The ID of the photo.
+    /// - Returns: True if the checkbox is selected, false otherwise.
     func isCheckboxSelected(for photoId: String) -> Bool {
         return checkboxStates[photoId] ?? false
     }
     
+    /// Sets the checkbox state for a given photo ID.
+    ///
+    /// - Parameters:
+    ///   - photoId: The ID of the photo.
+    ///   - isSelected: The checkbox state to set.
     func setCheckboxState(for photoId: String, isSelected: Bool) {
         checkboxStates[photoId] = isSelected
     }
     
+    /// Fetches photos from the network.
     func fetchPhotos() {
         guard !isFetching else { return }
         isFetching = true
@@ -55,6 +72,7 @@ class PhotoListViewModel {
         }
     }
     
+    /// Refreshes the photo list by resetting the state and fetching the first page of photos.
     func refreshPhotos() {
         currentPage = 1
         photos.removeAll()
