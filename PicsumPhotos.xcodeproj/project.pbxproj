@@ -14,10 +14,9 @@
 		183D42232C314A7B00D940F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183D42222C314A7B00D940F4 /* Assets.xcassets */; };
 		183D42262C314A7B00D940F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 183D42252C314A7B00D940F4 /* Base */; };
 		183D423B2C31632F00D940F4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D423A2C31632F00D940F4 /* Photo.swift */; };
-		183D42412C3166F100D940F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42402C3166F100D940F4 /* Alamofire */; };
-		183D42432C3166F100D940F4 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42422C3166F100D940F4 /* AlamofireDynamic */; };
 		183D42462C31670800D940F4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42452C31670800D940F4 /* SDWebImage */; };
 		183D42482C31670800D940F4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42472C31670800D940F4 /* SDWebImageMapKit */; };
+		183D424B2C3167A500D940F4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D424A2C3167A500D940F4 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +29,7 @@
 		183D42252C314A7B00D940F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183D42272C314A7B00D940F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183D423A2C31632F00D940F4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		183D424A2C3167A500D940F4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,9 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183D42462C31670800D940F4 /* SDWebImage in Frameworks */,
-				183D42412C3166F100D940F4 /* Alamofire in Frameworks */,
 				183D42482C31670800D940F4 /* SDWebImageMapKit in Frameworks */,
-				183D42432C3166F100D940F4 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +64,7 @@
 		183D42182C314A7800D940F4 /* PicsumPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				183D42492C31679A00D940F4 /* Managers */,
 				183D42392C31632400D940F4 /* Model */,
 				183D42382C315EFE00D940F4 /* Common */,
 				183D42372C315EE000D940F4 /* Controller */,
@@ -102,6 +101,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		183D42492C31679A00D940F4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				183D424A2C3167A500D940F4 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,8 +126,6 @@
 			);
 			name = PicsumPhotos;
 			packageProductDependencies = (
-				183D42402C3166F100D940F4 /* Alamofire */,
-				183D42422C3166F100D940F4 /* AlamofireDynamic */,
 				183D42452C31670800D940F4 /* SDWebImage */,
 				183D42472C31670800D940F4 /* SDWebImageMapKit */,
 			);
@@ -185,6 +190,7 @@
 			files = (
 				183D423B2C31632F00D940F4 /* Photo.swift in Sources */,
 				183D421E2C314A7800D940F4 /* HomeViewController.swift in Sources */,
+				183D424B2C3167A500D940F4 /* NetworkManager.swift in Sources */,
 				183D421A2C314A7800D940F4 /* AppDelegate.swift in Sources */,
 				183D421C2C314A7800D940F4 /* SceneDelegate.swift in Sources */,
 			);
@@ -432,16 +438,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		183D42402C3166F100D940F4 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		183D42422C3166F100D940F4 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
 		183D42452C31670800D940F4 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 183D42442C31670800D940F4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
