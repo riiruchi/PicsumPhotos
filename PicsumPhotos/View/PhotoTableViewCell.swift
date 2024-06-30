@@ -23,13 +23,14 @@ class PhotoTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0  // Support multi-line text
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
+        label.numberOfLines = 0  // Support multi-line text
         return label
     }()
     
@@ -68,6 +69,7 @@ class PhotoTableViewCell: UITableViewCell {
             photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             photoImageView.widthAnchor.constraint(equalToConstant: 100),
             photoImageView.heightAnchor.constraint(equalToConstant: 100),
+            photoImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: 8),
@@ -76,12 +78,13 @@ class PhotoTableViewCell: UITableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             descriptionLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: 8),
             descriptionLabel.trailingAnchor.constraint(equalTo: checkbox.leadingAnchor, constant: -8),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8),
             
             checkbox.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             checkbox.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             checkbox.widthAnchor.constraint(equalToConstant: 30),
-            checkbox.heightAnchor.constraint(equalToConstant: 30)
+            checkbox.heightAnchor.constraint(equalToConstant: 30),
+            checkbox.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8)
         ])
     }
     
@@ -90,7 +93,7 @@ class PhotoTableViewCell: UITableViewCell {
         checkboxAction?(checkbox.isSelected)
     }
     
-    func configure(with photo: Photo, isSelected: Bool) {
+    func configure(with photo: Photo, isSelected: Bool, isFirstCell: Bool = false) {
         titleLabel.text = photo.author
         descriptionLabel.text = photo.url
         checkbox.isSelected = isSelected
