@@ -13,5 +13,10 @@ struct Photo: Codable {
     let width: Int
     let height: Int
     let url: String
-    let download_url: String
+    let downloadURL: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, author, width, height, url
+        case downloadURL = "download_url"
+    }
 }
