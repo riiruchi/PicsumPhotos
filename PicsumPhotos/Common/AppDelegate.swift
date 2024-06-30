@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // The window will be configured in the SceneDelegate for iOS 13 and later
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
-            let viewController = ViewController()
+            let viewController = HomeViewController()
             window?.rootViewController = viewController
             window?.makeKeyAndVisible()
         }
