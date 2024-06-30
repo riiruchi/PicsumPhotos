@@ -14,6 +14,10 @@
 		183D42232C314A7B00D940F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183D42222C314A7B00D940F4 /* Assets.xcassets */; };
 		183D42262C314A7B00D940F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 183D42252C314A7B00D940F4 /* Base */; };
 		183D423B2C31632F00D940F4 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D423A2C31632F00D940F4 /* ImageItem.swift */; };
+		183D42412C3166F100D940F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42402C3166F100D940F4 /* Alamofire */; };
+		183D42432C3166F100D940F4 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42422C3166F100D940F4 /* AlamofireDynamic */; };
+		183D42462C31670800D940F4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42452C31670800D940F4 /* SDWebImage */; };
+		183D42482C31670800D940F4 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42472C31670800D940F4 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183D42462C31670800D940F4 /* SDWebImage in Frameworks */,
+				183D42412C3166F100D940F4 /* Alamofire in Frameworks */,
+				183D42482C31670800D940F4 /* SDWebImageMapKit in Frameworks */,
+				183D42432C3166F100D940F4 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +118,12 @@
 			dependencies = (
 			);
 			name = PicsumPhotos;
+			packageProductDependencies = (
+				183D42402C3166F100D940F4 /* Alamofire */,
+				183D42422C3166F100D940F4 /* AlamofireDynamic */,
+				183D42452C31670800D940F4 /* SDWebImage */,
+				183D42472C31670800D940F4 /* SDWebImageMapKit */,
+			);
 			productName = PicsumPhotos;
 			productReference = 183D42162C314A7800D940F4 /* PicsumPhotos.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +152,10 @@
 				Base,
 			);
 			mainGroup = 183D420D2C314A7800D940F4;
+			packageReferences = (
+				183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				183D42442C31670800D940F4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 183D42172C314A7800D940F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -393,6 +411,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		183D42442C31670800D940F4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		183D42402C3166F100D940F4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		183D42422C3166F100D940F4 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 183D423F2C3166F100D940F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		183D42452C31670800D940F4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 183D42442C31670800D940F4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		183D42472C31670800D940F4 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 183D42442C31670800D940F4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 183D420E2C314A7800D940F4 /* Project object */;
 }
