@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageItem: Codable {
+struct Photo: Codable {
     let id: String
     let author: String
     let width: Int

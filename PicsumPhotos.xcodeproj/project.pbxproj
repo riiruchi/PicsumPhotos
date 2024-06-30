@@ -13,7 +13,7 @@
 		183D42212C314A7800D940F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 183D42202C314A7800D940F4 /* Base */; };
 		183D42232C314A7B00D940F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183D42222C314A7B00D940F4 /* Assets.xcassets */; };
 		183D42262C314A7B00D940F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 183D42252C314A7B00D940F4 /* Base */; };
-		183D423B2C31632F00D940F4 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D423A2C31632F00D940F4 /* ImageItem.swift */; };
+		183D423B2C31632F00D940F4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183D423A2C31632F00D940F4 /* Photo.swift */; };
 		183D42412C3166F100D940F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42402C3166F100D940F4 /* Alamofire */; };
 		183D42432C3166F100D940F4 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42422C3166F100D940F4 /* AlamofireDynamic */; };
 		183D42462C31670800D940F4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 183D42452C31670800D940F4 /* SDWebImage */; };
@@ -29,7 +29,7 @@
 		183D42222C314A7B00D940F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183D42252C314A7B00D940F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183D42272C314A7B00D940F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		183D423A2C31632F00D940F4 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		183D423A2C31632F00D940F4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 		183D42392C31632400D940F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				183D423A2C31632F00D940F4 /* ImageItem.swift */,
+				183D423A2C31632F00D940F4 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183D423B2C31632F00D940F4 /* ImageItem.swift in Sources */,
+				183D423B2C31632F00D940F4 /* Photo.swift in Sources */,
 				183D421E2C314A7800D940F4 /* HomeViewController.swift in Sources */,
 				183D421A2C314A7800D940F4 /* AppDelegate.swift in Sources */,
 				183D421C2C314A7800D940F4 /* SceneDelegate.swift in Sources */,
